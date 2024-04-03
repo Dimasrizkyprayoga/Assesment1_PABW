@@ -37,5 +37,25 @@
             <p class="nim">6701223070</p>
             <p class="kelas">D3SI-46-04</p>
         </div>
+        <div>
+          <label for="jumlah">Jumlah:</label>
+          <input type="number" id="jumlah" name="jumlah" placeholder="Masukkan jumlah">
+        
+          <label for="pilihan">Pilihan:</label>
+          <select id="pilihan" name="pilihan">
+            <option value="sherlock">Sherlock</option>
+            <option value="lupin">Lupin</option>
+            <option value="aladin">Aladin</option>
+          </select>
+        
+          <button type="button" onclick="myFunction()">Kirim</button>
+        </div>
     </body>
+    <script>
+       function myFunction() {
+          const jumlah = document.getElementById("jumlah").value;
+          const pilihan = document.getElementById("pilihan").value;
+          alert("Jumlah: " + jumlah + ", Pilihan: " + pilihan);
+        }
+    </script>
 </html>
