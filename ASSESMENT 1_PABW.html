@@ -46,6 +46,7 @@
             <option value="sherlock">Sherlock</option>
             <option value="lupin">Lupin</option>
             <option value="aladin">Aladin</option>
+            <option value="aladin"></option>
           </select>
         
           <button type="button" onclick="myFunction()">Kirim</button>
@@ -57,11 +58,14 @@ let buku = [
   {"nama": "lupin", "jumlah":2},
   {"nama": "aladin", "jumlah":2},
 ];
+function myFunction() {
+  const jumlah = document.getElementById("jumlah").value;
+  const pilihan = document.getElementById("pilihan").value;
 
-       function myFunction() {
-          const jumlah = document.getElementById("jumlah").value;
-          const pilihan = document.getElementById("pilihan").value;
-          alert("Jumlah: " + jumlah + ", Pilihan: " + pilihan);
-        }
+  if (!jumlah) {
+    alert("Jumlah tidak boleh kosong!");
+    return;
+  }
+}
     </script>
 </html>
