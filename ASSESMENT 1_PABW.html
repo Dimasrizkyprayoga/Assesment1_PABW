@@ -70,16 +70,19 @@ function myFunction() {
 
   const bukuPilihan = buku.find(buku => buku.nama === pilihan);
 
-if (bukuPilihan) {
-  if (jumlah > bukuPilihan.jumlah) {
-    alert("Jumlah buku " + bukuPilihan.nama + " tidak tersedia!");
+  if (bukuPilihan) {
+    if (jumlah > bukuPilihan.jumlah) {
+      alert("Jumlah buku " + bukuPilihan.nama + " tidak tersedia!");
+    } else {
+      // Tampilkan pesan "Silahkan ambil buku Anda"
+      if (jumlah <= bukuPilihan.jumlah) {
+        alert("Silahkan ambil buku " + bukuPilihan.nama + "anda sebanyak " + jumlah + "!");
+      }
+      bukuPilihan.jumlah -= jumlah;
+    }
   } else {
-    alert("Jumlah " + bukuPilihan.nama + ": " + (bukuPilihan.jumlah - jumlah));
-    bukuPilihan.jumlah -= jumlah;
+    alert("Buku " + pilihan + " tidak ditemukan!");
   }
-} else {
-  alert("Buku " + pilihan + " tidak ditemukan!");
-}
 }
     </script>
 </html>
