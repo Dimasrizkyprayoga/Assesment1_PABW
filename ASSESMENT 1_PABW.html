@@ -66,6 +66,14 @@ function myFunction() {
     alert("Jumlah tidak boleh kosong!");
     return;
   }
+
+  const bukuPilihan = buku.find(buku => buku.nama === pilihan);
+  if (bukuPilihan) {
+    alert("Jumlah " + bukuPilihan.nama + ": " + (bukuPilihan.jumlah - jumlah));
+    bukuPilihan.jumlah -= jumlah;
+  } else {
+    alert("Buku " + pilihan + " tidak ditemukan!");
+  }
 }
     </script>
 </html>
