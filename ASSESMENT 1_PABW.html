@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="id">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Website Sederhana</title>
-        <style>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Sederhana</title>
+    <style>
     body {
       font-family: Arial, sans-serif;
       margin: 20px;
@@ -29,30 +29,31 @@
     }
 
   </style>
-    </head>
-    <body>
-        <div class="container">
-            <img src="foto formal.jpg" alt="Foto Anda" class="foto">
-            <h1 class="nama">Dimas Rizky Prayoga</h1>
-            <p class="nim">6701223070</p>
-            <p class="kelas">D3SI-46-04</p>
-        </div>
-        <div>
-          <label for="jumlah">Jumlah:</label>
-          <input type="number" id="jumlah" name="jumlah" placeholder="Masukkan jumlah">
-        
-          <label for="pilihan">Pilihan:</label>
-          <select id="pilihan" name="pilihan">
-            <option value="sherlock">Sherlock</option>
-            <option value="lupin">Lupin</option>
-            <option value="aladin">Aladin</option>
-            <option value="aladin"></option>
-          </select>
-        
-          <button type="button" onclick="myFunction()">Kirim</button>
-        </div>
-    </body>
-    <script>
+  </head>
+  <body>
+    <div class="container">
+      <img src="foto formal.jpg" alt="Foto Anda" class="foto">
+      <h1 class="nama">Dimas Rizky Prayoga</h1>
+      <p class="nim">6701223070</p>
+      <p class="kelas">D3SI-46-04</p>
+    </div>
+    <div>
+      <label for="jumlah">Jumlah:</label>
+      <input type="number" id="jumlah" name="jumlah"
+        placeholder="Masukkan jumlah">
+
+      <label for="pilihan">Pilihan:</label>
+      <select id="pilihan" name="pilihan">
+        <option value="sherlock">Sherlock</option>
+        <option value="lupin">Lupin</option>
+        <option value="aladin">Aladin</option>
+        <option value="aladin"></option>
+      </select>
+
+      <button type="button" onclick="myFunction()">Kirim</button>
+    </div>
+  </body>
+  <script>
 let buku = [
   {"nama": "sherlock", "jumlah":2},
   {"nama": "lupin", "jumlah":2},
@@ -68,12 +69,17 @@ function myFunction() {
   }
 
   const bukuPilihan = buku.find(buku => buku.nama === pilihan);
-  if (bukuPilihan) {
+
+if (bukuPilihan) {
+  if (jumlah > bukuPilihan.jumlah) {
+    alert("Jumlah buku " + bukuPilihan.nama + " tidak tersedia!");
+  } else {
     alert("Jumlah " + bukuPilihan.nama + ": " + (bukuPilihan.jumlah - jumlah));
     bukuPilihan.jumlah -= jumlah;
-  } else {
-    alert("Buku " + pilihan + " tidak ditemukan!");
   }
+} else {
+  alert("Buku " + pilihan + " tidak ditemukan!");
+}
 }
     </script>
 </html>
